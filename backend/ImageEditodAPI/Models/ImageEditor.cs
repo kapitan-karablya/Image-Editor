@@ -6,6 +6,8 @@ using System.Drawing;
 using System.ComponentModel;
 using System.IO;
 using DocumentFormat.OpenXml.InkML;
+using System.Drawing.Drawing2D;
+using System.Globalization;
 
 namespace ImageEditodAPI.Models
 {
@@ -62,9 +64,33 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        public static byte[] WriteText(byte[] image)
+        public static byte[] WriteText(byte[] image, string text, int startX, int startY, int stopX, int stopY, string hexColor, string font, string fontSize)
         {
             Bitmap bitmap = BytesToBitmap(image);
+
+            Rectangle textArea = new Rectangle
+                (
+                    new Point(startX, startY),
+                    new Size(stopX - startX, stopY - startY)
+                );
+
+            Graphics graphics = Graphics.FromImage(bitmap);
+
+            int a = 1;
+            int r = int.Parse(hexColor.Substring(0, 2), NumberStyles.HexNumber);
+            int g = int.Parse(hexColor.Substring(2, 2), NumberStyles.HexNumber);
+            int b = int.Parse(hexColor.Substring(4, 2), NumberStyles.HexNumber);
+
+            var brush = new SolidBrush(Color.FromArgb(a, r, g, b));
+
+
+            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            graphics.DrawString(text, new Font(font, float.Parse(fontSize, CultureInfo.InvariantCulture.NumberFormat)), Brushes.Black, textArea);
+
+            graphics.Flush();
+
             byte[] result = BitmapToBytes(bitmap);
 
             return result;
