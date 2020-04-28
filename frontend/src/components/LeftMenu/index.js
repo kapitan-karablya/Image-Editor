@@ -23,7 +23,7 @@ class Link extends Component {
     render() {
         const url = "/" + this.props.label.toLowerCase().trim().replace(" ", "-");
         return <div className='button-elements'>
-            <a href={url}><img src="/frontend/icons/folder.png" className="img-fluid" alt="Responsive image"/></a>
+            <a href={url}><img src={'icons/'+ this.props.label + '.svg'} alt={this.props.label}/></a>
         </div>
     }
 
