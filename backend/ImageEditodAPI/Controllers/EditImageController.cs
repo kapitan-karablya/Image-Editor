@@ -17,6 +17,14 @@ namespace ImageEditodAPI.Controllers
     {
         private readonly ILogger<EditImageController> _logger;
 
+        private byte[] getBytesFromBody(Stream body)
+        {
+            using (var reader = new StreamReader(Request.Body))
+            {
+                return Convert.FromBase64String(reader.ReadToEndAsync().Result);
+            }
+        }
+
         public EditImageController(ILogger<EditImageController> logger)
         {
             _logger = logger;
@@ -26,11 +34,7 @@ namespace ImageEditodAPI.Controllers
         [Route("Crop")]
         public IActionResult Crop(int startX, int startY, int stopX, int stopY)
         {
-            byte[] body = Array.Empty<byte>();
-            using (var reader = new StreamReader(Request.Body))
-            {
-                body = Convert.FromBase64String(reader.ReadToEndAsync().Result);
-            }
+            var body = getBytesFromBody(Request.Body);
 
             byte[] result = ImageEditor.Crop(body, startX, startY, stopX, stopY);
             return Content(Convert.ToBase64String(result));
@@ -39,11 +43,7 @@ namespace ImageEditodAPI.Controllers
         [Route("Rotate")]
         public IActionResult Rotate(double angle)
         {
-            byte[] body = Array.Empty<byte>();
-            using (var reader = new StreamReader(Request.Body))
-            {
-                body = Convert.FromBase64String(reader.ReadToEndAsync().Result);
-            }
+            byte[] body = getBytesFromBody(Request.Body);
 
             byte[] result = ImageEditor.Rotate(body, angle);
             return Content(Convert.ToBase64String(result));
