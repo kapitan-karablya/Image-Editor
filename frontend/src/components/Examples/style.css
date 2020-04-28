@@ -3,6 +3,10 @@
     padding-left: 100px;
 }
 
+.images{
+    display:flex;
+}
+
 .img-examples {
     display:flex;
     margin: auto;

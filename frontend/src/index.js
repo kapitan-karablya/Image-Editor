@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from "react-dom";
 import './styles.css';
-import LeftMenu from "./components/LeftMenu";
+import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import Examples from "./components/Examples";
 
@@ -12,7 +12,7 @@ class App extends React.Component {
         return (
                 <div>
                     <header className="header">
-                        <LeftMenu />
+                        <Sidebar />
                     </header>
                     <Main/>
                     <Examples/>
