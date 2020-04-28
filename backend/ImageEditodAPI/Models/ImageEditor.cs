@@ -172,20 +172,16 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
+        public static byte[] Discolor(byte[] image, bool isSepia)
+        {
+            if (isSepia)
+                return sepia(image);
+            return blackWhite(image);
+        }
+
         private static byte[] sepia(byte[] image)
         {
             Bitmap bitmap = BytesToBitmap(image);
-
-            byte[] result = BitmapToBytes(bitmap);
-
-            return result;
-        }
-
-        private static byte[] blackWhite(byte[] image)
-        {
-            Bitmap bitmap = BytesToBitmap(image);
-
-            Bitmap bitmap = new Bitmap("D:\\Image\\zeenat.jpg");
 
             //get image dimension
             int width = bitmap.Width;
@@ -247,7 +243,25 @@ namespace ImageEditodAPI.Models
             }
 
             byte[] result = BitmapToBytes(bitmap);
+            return result;
+        }
 
+        private static byte[] blackWhite(byte[] image)
+        {
+            Bitmap bitmap = BytesToBitmap(image);
+
+            int rgb;
+            Color c;
+
+            for (int y = 0; y < bitmap.Height; y++)
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    c = bitmap.GetPixel(x, y);
+                    rgb = (int)Math.Round(.299 * c.R + .587 * c.G + .114 * c.B);
+                    bitmap.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
+                }
+
+            byte[] result = BitmapToBytes(bitmap);
             return result;
         }
 
