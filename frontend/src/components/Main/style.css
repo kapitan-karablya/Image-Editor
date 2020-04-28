@@ -1,0 +1,24 @@
+.download {
+    font-family: "Roboto", sans-serif;
+    font-size: 4vw;
+    white-space: nowrap;
+    text-align:  center;
+
+    color: #D1D7E4;
+}
+
+.download img {
+    width: 30vw;
+    height: 30vh;
+    display:block;
+    margin:auto;
+}
+
+.main {
+    padding-top: 5vh;
+    padding-left: 100px;
+}
+
+.examples {
+    padding-top: 8vh;
+}

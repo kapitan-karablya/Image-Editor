@@ -6,7 +6,9 @@ class LeftMenu extends Component {
     render() {
         let menus = [
             "folder",
-            "Cut"
+            "rotate",
+            "cut",
+            "text"
         ];
         return (
             <div className="sidebar">
