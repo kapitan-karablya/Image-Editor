@@ -1,0 +1,20 @@
+.left-menu_li {
+    list-style: none;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    max-width: 100px;
+    width: 10%;
+    background-color: #19202A
+}
+
+.button-elements {
+    width: 100%;
+    padding: 20px;
+    background-color: #19202A;
+}
+.button-elements:active {
+    background-color: #242C39
+}
