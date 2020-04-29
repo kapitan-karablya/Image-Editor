@@ -30,7 +30,7 @@ namespace ImageEditodAPI.Models
                     new Size(stopX - startX, stopY - startY)
                 );
 
-            byte[] result = BitmapToBytes(bitmap.Clone(cropArea, bitmap.PixelFormat));
+            byte[] result = BitmapToPngBytes(bitmap.Clone(cropArea, bitmap.PixelFormat));
             return result;
         }
 
@@ -52,7 +52,7 @@ namespace ImageEditodAPI.Models
             }
 
 
-            byte[] result = BitmapToBytes(rotatedImage);
+            byte[] result = BitmapToPngBytes(rotatedImage);
 
             return result;
         }
@@ -60,7 +60,7 @@ namespace ImageEditodAPI.Models
         public static byte[] ChangeForm(byte[] image)
         {
             Bitmap bitmap = BytesToBitmap(image);
-            byte[] result = BitmapToBytes(bitmap);
+            byte[] result = BitmapToPngBytes(bitmap);
 
             return result;
         }
@@ -92,7 +92,7 @@ namespace ImageEditodAPI.Models
 
             graphics.Flush();
 
-            byte[] result = BitmapToBytes(bitmap);
+            byte[] result = BitmapToPngBytes(bitmap);
 
             return result;
         }
@@ -168,7 +168,7 @@ namespace ImageEditodAPI.Models
             // Unlock the bits
             blurred.UnlockBits(blurredData);
 
-            byte[] result = BitmapToBytes(blurred);
+            byte[] result = BitmapToPngBytes(blurred);
             return result;
         }
 
@@ -242,7 +242,7 @@ namespace ImageEditodAPI.Models
                 }
             }
 
-            byte[] result = BitmapToBytes(bitmap);
+            byte[] result = BitmapToPngBytes(bitmap);
             return result;
         }
 
@@ -261,7 +261,15 @@ namespace ImageEditodAPI.Models
                     bitmap.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
                 }
 
-            byte[] result = BitmapToBytes(bitmap);
+            byte[] result = BitmapToPngBytes(bitmap);
+            return result;
+        }
+
+        public static byte[] ConvertPngToJpeg(byte[] image)
+        {
+            Bitmap bitmap = BytesToBitmap(image);
+            byte[] result = BitmapToPngBytes(bitmap);
+
             return result;
         }
 
@@ -271,7 +279,7 @@ namespace ImageEditodAPI.Models
             return (Bitmap)img;
         }
 
-        public static byte[] BitmapToBytes(Bitmap bitmap)
+        public static byte[] BitmapToPngBytes(Bitmap bitmap)
         {
             var bytes = Array.Empty<byte>();
             using (var stream = new MemoryStream())
