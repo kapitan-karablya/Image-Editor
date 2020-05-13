@@ -4,7 +4,7 @@ import './styles.css';
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 //import Examples from "./components/Examples";
-//import ImageField from "./components/ImageField";
+import EditField from "./components/EditField";
 
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
         return (
             <div className="body">
                 <Sidebar/>
-                <Main/>
+                <EditField/>
             </div>
         );
     }
