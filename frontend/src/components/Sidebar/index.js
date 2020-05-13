@@ -13,7 +13,7 @@ function Sidebar() {
 
     let prevItem = activeItem;
 
-    window.onload = function() {
+    window.onload = function () {
         document.getElementById(activeItem).style.backgroundColor = "#242C39";
     };
 
@@ -38,17 +38,23 @@ function SidebarItem({createClickHandler, item}) {
     const clickHandler = createClickHandler(item.text);
 
     return (
-        <div
-            className='menu-item'
-            id={item.text}
-            onClick={clickHandler}
-        >
-            <img src={'icons/' + item.text + '.svg'} alt={item.text}/>
-        </div>
+        <a href={'/' + item.text.toLowerCase().trim().replace(" ", "-")}>
+            <div
+                className='menu-item'
+                id={item.text}
+                onClick={clickHandler}
+            >
+                <img src={'icons/' + item.text + '.svg'} alt={item.text}/>
+            </div>
+        </a>
     )
 }
 
 export default Sidebar
+
+
+
+
 /*class LeftMenu extends Component {
     render() {
         let pages = [

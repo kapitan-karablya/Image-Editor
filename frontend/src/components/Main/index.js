@@ -13,7 +13,6 @@ class Main extends Component {
                 </div>
                 <Examples/>
             </div>
-
         )
     }
 }

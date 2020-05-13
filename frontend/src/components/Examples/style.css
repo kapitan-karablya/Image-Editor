@@ -9,7 +9,7 @@
 
 .img-examples {
     display:flex;
-    flex-basis: 1500px;
+    flex-basis: 80%;
     margin: auto;
     height: 20vh;
     background: rgba(19, 24, 30, 0.5);
