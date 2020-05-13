@@ -1,26 +1,9 @@
 .sidebar {
-    position: fixed;
+    flex-basis: 100px;
     height: 100vh;
-    max-width: 100px;
-    min-width: 40px;
-    width: 10%;
     background-color: #19202A
 }
 
-.menu-item,
-.menu-item--active {
-    max-height: 100px;
-    width: 100%;
-}
-
 .menu-item {
-    padding: 20px;
-}
-
-.menu-item--active {
-    height: 10vw;
-    min-height: 64px;
-    position: absolute;
-    top: auto;
-    z-index: -1;
+    padding: 20%;
 }

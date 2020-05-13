@@ -3,20 +3,17 @@ import {render} from "react-dom";
 import './styles.css';
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
-import Examples from "./components/Examples";
-
+//import Examples from "./components/Examples";
+//import ImageField from "./components/ImageField";
 
 
 class App extends React.Component {
     render() {
         return (
-                <div>
-                    <header className="header">
-                        <Sidebar />
-                    </header>
-                    <Main/>
-                    <Examples/>
-                </div>
+            <div className="body">
+                <Sidebar/>
+                <Main/>
+            </div>
         );
     }
 }

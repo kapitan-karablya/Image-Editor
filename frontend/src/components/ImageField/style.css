@@ -1,10 +1,9 @@
 .download {
-    display: flex;
-    flex-direction: column;
     font-family: "Roboto", sans-serif;
     font-size: 4vw;
     white-space: nowrap;
     text-align:  center;
+
     color: #D1D7E4;
 }
 
@@ -13,16 +12,4 @@
     height: 30vh;
     display:block;
     margin:auto;
-}
-
-.main {
-    padding-top: 10vh;
-    flex-basis: 100%;
-    justify-content: center;
-}
-
-.choose-label {
-    padding-top: 5vh;
-    font-size: 3vw;
-
 }

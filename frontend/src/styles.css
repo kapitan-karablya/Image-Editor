@@ -4,4 +4,12 @@ body {
     width:100%;
     height:100%;
     background-color: #242C39;
-    }
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
