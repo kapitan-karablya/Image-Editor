@@ -1,11 +1,12 @@
 import React from "react";
 import './style.css'
+import {Link} from "react-router-dom";
 
 const sidebarItemsOptions = [
-    {text: 'folder'},
-    {text: 'rotate'},
-    {text: 'cut'},
-    {text: 'text'},
+    {text: 'folder', href: '/'},
+    {text: 'rotate', href: '/rotate'},
+    {text: 'cut', href: '/rotate'},
+    {text: 'text', href: '/rotate'},
 ];
 
 function Sidebar() {
@@ -38,15 +39,18 @@ function SidebarItem({createClickHandler, item}) {
     const clickHandler = createClickHandler(item.text);
 
     return (
-        <a href={'/' + item.text.toLowerCase().trim().replace(" ", "-")}>
+
             <div
                 className='menu-item'
                 id={item.text}
                 onClick={clickHandler}
+
             >
-                <img src={'icons/' + item.text + '.svg'} alt={item.text}/>
+                <Link to={item.href}>
+                    <div className='link'><img src={'icons/' + item.text + '.svg'} alt={item.text}/></div>
+                </Link>
+
             </div>
-        </a>
     )
 }
 

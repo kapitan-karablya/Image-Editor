@@ -5,7 +5,7 @@ class EditedImage extends Component {
     render() {
         return (
             <div className='editedImage'>
-                <p><img src={"images/car.webp"} alt="image"/></p>
+                <img src={"images/car.webp"} alt="image"/>
             </div>
         )
     }

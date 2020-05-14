@@ -1,0 +1,23 @@
+.editedImage {
+    display: flex;
+    justify-content: center;
+    flex-basis: 90%;
+    flex-shrink: 8;
+    align-items: center;
+    width: 90%;
+    align-self: center;
+
+}
+
+.editedImage img {
+    height:100%;
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border: 5px solid #D1D7E4;
+    box-shadow: 0 4px 100px rgba(255, 255, 255, 0.1);
+    background-image: url("backgroung.png");
+    background-repeat: repeat;
+}
+
