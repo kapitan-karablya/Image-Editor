@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import './style.css'
 import Examples from "../Examples";
 
-class Main extends Component {
+class Home extends Component {
     render() {
         return (
-            <div className="main">
+            <div className="home">
                 <div className='download'>
                     <label>Загрузите изображение</label>
                     <p><img src={"icons/folder.svg"} alt="folder"/></p>
@@ -17,4 +17,4 @@ class Main extends Component {
     }
 }
 
-export default Main
+export default Home
