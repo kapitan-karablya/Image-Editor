@@ -163,6 +163,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
+        [HttpGet]
         [Route("Rotate")]
         public IActionResult Rotate(double angle)
         {
@@ -178,6 +179,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
+        [HttpGet]
         [Route("ChangeForm")]
         public IActionResult ChangeForm()
         {
