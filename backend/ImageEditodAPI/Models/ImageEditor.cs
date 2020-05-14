@@ -84,11 +84,10 @@ namespace ImageEditodAPI.Models
 
             var brush = new SolidBrush(Color.FromArgb(a, r, g, b));
 
-
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            graphics.DrawString(text, new Font(font, float.Parse(fontSize, CultureInfo.InvariantCulture.NumberFormat)), Brushes.Black, textArea);
+            graphics.DrawString(text, new Font(font, float.Parse(fontSize, CultureInfo.InvariantCulture.NumberFormat)), brush, textArea);
 
             graphics.Flush();
 
@@ -97,7 +96,7 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        public unsafe static byte[] Blur(byte[] image, Int32 blurSize)
+        public unsafe static byte[] Blur(byte[] image, int blurSize)
         {
             Bitmap bitmap = BytesToBitmap(image);
 
@@ -265,7 +264,15 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        public static byte[] ConvertPngToJpeg(byte[] image)
+        public static byte[] ConvertToJpeg(byte[] image)
+        {
+            Bitmap bitmap = BytesToBitmap(image);
+            byte[] result = BitmapToJpegBytes(bitmap);
+
+            return result;
+        }
+
+        public static byte[] ConvertToPng(byte[] image)
         {
             Bitmap bitmap = BytesToBitmap(image);
             byte[] result = BitmapToPngBytes(bitmap);
@@ -285,6 +292,17 @@ namespace ImageEditodAPI.Models
             using (var stream = new MemoryStream())
             {
                 bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                bytes = stream.ToArray();
+            }
+            return bytes;
+        }
+
+        public static byte[] BitmapToJpegBytes(Bitmap bitmap)
+        {
+            var bytes = Array.Empty<byte>();
+            using (var stream = new MemoryStream())
+            {
+                bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 bytes = stream.ToArray();
             }
             return bytes;
