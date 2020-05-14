@@ -5,9 +5,22 @@ import {Link} from "react-router-dom";
 const sidebarItemsOptions = [
     {text: 'folder', href: '/'},
     {text: 'rotate', href: '/rotate'},
-    {text: 'cut', href: '/rotate'},
-    {text: 'text', href: '/rotate'},
+    {text: 'cut', href: '/cut'},
+    {text: 'text', href: '/text'},
 ];
+
+function HideMenu(activeItem, prevItem) {
+    console.log(activeItem);
+    let elem = document.getElementById(activeItem + '-menu');
+    let elemSize;
+    if (activeItem !== 'folder')
+        elemSize = elem.style.flexBasis;
+    if (prevItem !== 'folder')
+        document.getElementById(prevItem + '-menu').style.flexBasis = '0px';
+    if (activeItem === 'folder')
+        return;
+    elemSize === '0px' ? elem.style.flexBasis = '20%' : elem.style.flexBasis = '0px';
+}
 
 function Sidebar() {
     const [activeItem, setActiveItem] = React.useState('folder');
@@ -22,6 +35,8 @@ function Sidebar() {
         e.preventDefault();
         document.getElementById(prevItem).style.backgroundColor = "#19202A";
         document.getElementById(activeItem).style.backgroundColor = "#242C39";
+        if (prevItem === activeItem)
+            HideMenu(activeItem, prevItem);
         prevItem = activeItem;
         setActiveItem(activeItem);
     };
@@ -39,12 +54,10 @@ function SidebarItem({createClickHandler, item}) {
     const clickHandler = createClickHandler(item.text);
 
     return (
-
             <div
                 className='menu-item'
                 id={item.text}
                 onClick={clickHandler}
-
             >
                 <Link to={item.href}>
                     <div className='link'><img src={'icons/' + item.text + '.svg'} alt={item.text}/></div>

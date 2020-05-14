@@ -15,9 +15,8 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    border: 5px solid #D1D7E4;
+    outline: #D1D7E4 solid 5px;
     box-shadow: 0 4px 100px rgba(255, 255, 255, 0.1);
-    background-image: url("backgroung.png");
     background-repeat: repeat;
 }
 

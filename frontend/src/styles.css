@@ -13,3 +13,19 @@ body {
     flex-direction: row;
     justify-content: left;
 }
+
+.menu-right {
+    flex-basis: 20%;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    height: 100vh;
+    background-color: #242C39;
+}
+
+.edit-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-basis: 100%;
+}

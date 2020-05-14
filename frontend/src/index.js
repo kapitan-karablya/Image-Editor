@@ -3,8 +3,8 @@ import {render} from "react-dom";
 import './styles.css';
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
-import Examples from "./components/Examples";
-import EditField from "./components/EditField";
+import Cut from "./components/Cut";
+import Rotate from "./components/Rotate";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
@@ -15,7 +15,8 @@ class App extends React.Component {
                 <Sidebar/>
                 <Switch>
                     <Route exact path='/' component={Main}/>
-                    <Route path='/rotate' component={EditField}/>
+                    <Route path='/rotate' component={Rotate}/>
+                    <Route path='/cut' component={Cut}/>
                 </Switch>
 
             </div>

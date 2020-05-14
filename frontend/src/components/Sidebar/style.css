@@ -1,4 +1,6 @@
 .sidebar {
+    display: flex;
+    flex-direction: column;
     flex-basis: 100px;
     height: 100vh;
     background-color: #19202A

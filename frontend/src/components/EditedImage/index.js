@@ -5,7 +5,7 @@ class EditedImage extends Component {
     render() {
         return (
             <div className='editedImage'>
-                <img src={"images/car.webp"} alt="image"/>
+                <img style={{backgroundImage: "url('/images/background.png')"}} src={"images/car.webp"} alt="image"/>
             </div>
         )
     }
