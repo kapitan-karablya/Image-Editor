@@ -1,9 +1,61 @@
-.underconstruction {
-    height: 15vw;
-    width: 15vw;
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.buttonu{
+    background-color: #19202A;
+    margin: 2%;
+    height: 4vw;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.underconstruction img {
+.buttonu img {
     height: 100%;
-    width: 100%;
+    width: 80%;
+}
+
+.ok {
+    margin: 25%;
+}
+
+.flip img {
+    height: 80%;
+    width: 80%;
+    padding: 5%;
+}
+
+.y {
+    width: 40%;
+}
+
+.title {
+    font-size: 2vw;
+    margin-bottom: 50px;
+}
+
+.save {
+    font-size: 1vw;
+    height: 2vw;
+    width: 95%;
+    align-self: center;
+}
+.oks {
+    margin: 3%;
+}
+
+.f {
+    justify-content: space-between;
+    align-content: space-between;
 }
