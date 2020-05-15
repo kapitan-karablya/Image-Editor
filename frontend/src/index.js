@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Cut from "./components/Cut";
 import Rotate from "./components/Rotate";
+import TextEdit from "./components/TextEdit";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
@@ -17,6 +18,7 @@ class App extends React.Component {
                     <Route exact path='/' component={Home}/>
                     <Route path='/rotate' component={Rotate}/>
                     <Route path='/cut' component={Cut}/>
+                    <Route path='/text' component={TextEdit}/>
                 </Switch>
 
             </div>

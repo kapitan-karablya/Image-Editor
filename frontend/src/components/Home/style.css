@@ -6,6 +6,7 @@
     white-space: nowrap;
     text-align:  center;
     color: #D1D7E4;
+    box-sizing: border-box;
 }
 
 .download img {
@@ -13,16 +14,22 @@
     height: 30vh;
     display:block;
     margin:auto;
+    box-sizing: border-box;
+
 }
 
 .home {
     padding-top: 10vh;
     flex-basis: 100%;
     justify-content: center;
+    box-sizing: border-box;
+
 }
 
 .choose-label {
     padding-top: 5vh;
     font-size: 3vw;
+    box-sizing: border-box;
+
 
 }

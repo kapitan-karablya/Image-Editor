@@ -6,17 +6,19 @@
     align-items: center;
     width: 90%;
     align-self: center;
+    box-sizing: border-box;
 
 }
 
 .editedImage img {
     height:100%;
-    max-height: 80vh;
+    max-height: 75vh;
     width: auto;
     max-width: 100%;
     object-fit: contain;
     outline: #D1D7E4 solid 5px;
     box-shadow: 0 4px 100px rgba(255, 255, 255, 0.1);
     background-repeat: repeat;
+    box-sizing: border-box;
 }
 

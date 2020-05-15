@@ -8,7 +8,7 @@ class Home extends Component {
             <div className="home">
                 <div className='download'>
                     <label>Загрузите изображение</label>
-                    <p><img src={"icons/folder.svg"} alt="folder"/></p>
+                    <div><img src={"icons/folder.svg"} alt="folder"/></div>
                     <label className="choose-label">или выберите из существующих</label>
                 </div>
                 <Examples/>

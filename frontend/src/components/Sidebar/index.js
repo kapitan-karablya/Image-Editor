@@ -10,16 +10,15 @@ const sidebarItemsOptions = [
 ];
 
 function HideMenu(activeItem, prevItem) {
-    console.log(activeItem);
     let elem = document.getElementById(activeItem + '-menu');
     let elemSize;
     if (activeItem !== 'folder')
-        elemSize = elem.style.flexBasis;
+        elemSize = elem.style.width;
     if (prevItem !== 'folder')
-        document.getElementById(prevItem + '-menu').style.flexBasis = '0px';
+        document.getElementById(prevItem + '-menu').style.width = '0px';
     if (activeItem === 'folder')
         return;
-    elemSize === '0px' ? elem.style.flexBasis = '20%' : elem.style.flexBasis = '0px';
+    elemSize === '0px' ? elem.style.width = '20%' : elem.style.width = '0px';
 }
 
 function Sidebar() {
