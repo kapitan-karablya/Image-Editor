@@ -146,7 +146,7 @@ namespace ImageEditodAPI.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPut]
         [Route("Crop")]
         public IActionResult Crop(int startX, int startY, int stopX, int stopY)
         {
@@ -163,7 +163,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("Rotate")]
         public IActionResult Rotate(double angle)
         {
@@ -179,14 +179,14 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("ChangeForm")]
         public IActionResult ChangeForm()
         {
             return Content("Kek!");
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("WriteText")]
         public IActionResult WriteText(string text, int startX, int startY, int stopX, int stopY, string hexColor, string font, string fontSize)
         {
@@ -201,7 +201,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("blur")]
         public IActionResult Blur(int blurSize)
         {
@@ -216,7 +216,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("discolor")]
         public IActionResult Discolor(bool isSepia)
         {
@@ -231,7 +231,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("getjpeg")]
         public IActionResult ConvertToJpeg()
         {
@@ -246,7 +246,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("getpng")]
         public IActionResult ConvertToPng()
         {

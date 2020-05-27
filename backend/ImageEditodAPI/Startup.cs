@@ -71,11 +71,12 @@ namespace ImageEditodAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseAuthorization();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
+            
 
             app.UseEndpoints(endpoints =>
             {
