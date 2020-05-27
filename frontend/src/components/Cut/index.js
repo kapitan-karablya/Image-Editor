@@ -6,24 +6,28 @@ import EditField from "../EditField";
 class Cut extends Component {
     render() {
         return (
-            <div className='cut edit-menu'>
+            <div className='edit-menu'>
                 <nav id='cut-menu' className='menu-right'>
-                    <div className='rotate-tool'>
-                        <label className='title'>Обрезать</label>
+                    <div className='tools'>
+                        <label className='title'  style={{paddingBottom:"4vh"}}>Обрезать</label>
                         <label>Произвольно</label>
-                        <div className='buttons f'>
-                            <div className='buttonu y'><div className='ok'>957</div></div>
-                            <div className='h'><img src={"icons/x.svg"} alt="x"/></div>
-                            <div className='buttonu y'><div className='ok'>756</div></div>
+                        <div className='edit buttons'>
+                            <div className='button cut_b'><div>957</div></div>
+                            <div style={{width: "15%"}}>
+                                <img style={{height: "100%", width: "100%"}} src={"icons/x.svg"} alt="x"/>
+                            </div>
+                            <div className='button cut_b'><div>756</div></div>
                         </div>
-                        <div className='buttonu save'><div className='oks'>Сохранять пропорции</div></div>
+                        <div className='button save_proportion'>
+                            <div>Сохранять пропорции</div>
+                        </div>
                     </div>
-                    <div className='rotate-tool'>
+                    <div className='tools'>
                         <label>Фигурно</label>
-                        <div className='buttons'>
-                            <div className='buttonu'><img src={"icons/circle.svg"} alt="left"/></div>
-                            <div className='buttonu'><img src={"icons/ellipse.svg"} alt="right"/></div>
-                            <div className='buttonu'><img src={"icons/heart.svg"} alt="right"/></div>
+                        <div className='edit buttons'>
+                            <div className='button cut_b'><img src={"icons/circle.svg"} alt="circle"/></div>
+                            <div className='button cut_b'><img src={"icons/ellipse.svg"} alt="ellipse"/></div>
+                            <div className='button cut_b'><img src={"icons/heart.svg"} alt="heart"/></div>
                         </div>
                     </div>
                 </nav>

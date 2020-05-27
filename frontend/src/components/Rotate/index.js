@@ -8,7 +8,7 @@ class Rotate extends Component {
         return (
             <div className='rotate edit-menu'>
                 <nav id='rotate-menu' className='menu-right'>
-                    <div className='rotate-tool'>
+                    <div className='tools'>
                         <label>Повернуть на 90°</label>
                         <div className='buttons'>
                             <div className='button'><img src={"icons/rotate-left.svg"} alt="left"/></div>
@@ -16,16 +16,16 @@ class Rotate extends Component {
                         </div>
 
                     </div>
-                    <div className='rotate-tool'>
+                    <div className='tools'>
                         <label>Наклонить на</label>
                         <div className='buttons'>
                             <div className='button'> </div>
                             <div className='button'>
-                                <div className='ok'>OK</div>
+                                <div>OK</div>
                             </div>
                         </div>
                     </div>
-                    <div className='rotate-tool'>
+                    <div className='tools'>
                         <label>Отразить</label>
                         <div className='buttons'>
                             <div className='button flip'><img src={"/icons/flip-horizontally.svg"} alt="horizontally"/></div>
