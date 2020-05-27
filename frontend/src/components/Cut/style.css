@@ -9,7 +9,7 @@
 }
 .buttonu{
     background-color: #19202A;
-    margin: 2%;
+    margin: 3%;
     height: 4vw;
     width: 40%;
     border-radius: 10px;
@@ -38,6 +38,15 @@
 
 .y {
     width: 40%;
+}
+
+.h {
+    width: 15%;
+}
+
+.h img {
+    height: 100%;
+    width: 100%;
 }
 
 .title {
