@@ -10,3 +10,14 @@
 .link {
     padding: 20%;
 }
+
+.active {
+    background-color: #242C39;
+
+}
+
+.menu-item{
+    display: flex;
+    flex-direction: column;
+}
+

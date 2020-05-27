@@ -20,6 +20,9 @@
     flex-direction: column;
     align-items: center;
 }
+.prop div{
+    width: 100%;
+}
 
 .param{
     height: 6vh;
