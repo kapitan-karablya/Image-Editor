@@ -19,7 +19,7 @@ class Rotate extends Component {
                     <div className='tools'>
                         <label>Наклонить на</label>
                         <div className='buttons'>
-                            <div className='button'> </div>
+                            <input id="myText" type="number" className='button slant' />
                             <div className='button'>
                                 <div>OK</div>
                             </div>

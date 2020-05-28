@@ -18,3 +18,20 @@
     width: 95%;
     align-self: center;
 }
+.size{
+    display: flex;
+    width: 35%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    color: #D1D7E4;
+    border: none;
+    outline: none;
+    align-items: center;
+    text-align-last: center;
+    margin: 3%;
+}
+
+.size::-webkit-inner-spin-button {
+    display: none;
+}

@@ -12,11 +12,11 @@ class Cut extends Component {
                         <label className='title'  style={{paddingBottom:"4vh"}}>Обрезать</label>
                         <label>Произвольно</label>
                         <div className='edit buttons'>
-                            <div className='button cut_b'><div>957</div></div>
+                            <input id="myText" type="number"  className='button size'/>
                             <div style={{width: "15%"}}>
                                 <img style={{height: "100%", width: "100%"}} src={"icons/x.svg"} alt="x"/>
                             </div>
-                            <div className='button cut_b'><div>756</div></div>
+                            <input id="myText" type="number"  className='button size'/>
                         </div>
                         <div className='button save_proportion'>
                             <div>Сохранять пропорции</div>

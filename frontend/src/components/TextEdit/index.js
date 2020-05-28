@@ -31,13 +31,15 @@ class TextEdit extends Component {
                         <div className='text_prop'>
                             <div className='prop'>
                                 <div>Цвет</div>
-                                <div className='button'>d</div>
+                                <select className='button selector color'>
+                                    <option>Красный</option>
+                                    <option>Желтый</option>
+                                    <option>Зеленый</option>
+                                </select>
                             </div>
                             <div className='prop'>
-                                <div>Цвет</div>
-                                <div className='button'>
-                                    <div>s</div>
-                                </div>
+                                <div>Размер</div>
+                                    <input id="myText" type="number"  className='button input'/>
                             </div>
                         </div>
                     </div>
