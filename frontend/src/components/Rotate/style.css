@@ -32,6 +32,7 @@
     vertical-align: middle;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .button img {
