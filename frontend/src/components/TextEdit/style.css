@@ -30,7 +30,7 @@
     padding: 2%;
 }
 
-.selector{
+.selector {
     display: flex;
     width: 90%;
     height: 6vh;
@@ -42,16 +42,16 @@
     outline: none;
     align-items: center;
     text-align-last: center;
-    
 }
 
-.select option{
+option{
     background-color: transparent;
     border: 5px;
     padding-right: 15px;
     height: 31px;
     width: 220px;
     border-radius: 10px;
+    border: none;
 }
 
 .input{
@@ -76,3 +76,7 @@
     height: 4vw;
 }
 
+.position{
+    width: 41%;
+    margin: 3%;
+}

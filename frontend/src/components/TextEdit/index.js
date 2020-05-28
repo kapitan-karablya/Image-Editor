@@ -16,7 +16,7 @@ class TextEdit extends Component {
         return (
             <div className='rotate edit-menu'>
                 <nav id='text-menu' className='menu-right'>
-                    <div className='tools text_t'>
+                    <div className='tools'>
                         <div className='button text_b'>
                             <div>Добавить текст</div>
                         </div>
@@ -25,9 +25,16 @@ class TextEdit extends Component {
                             <option>Times New Roman</option>
                             <option>California</option>
                         </select>
-                        <div className='button text_b'>
-                            <div>Шрифт</div>
+                    </div>
+                    <div className='tools'>
+                    <label>Положение</label>
+                        <div className='buttons'>
+                            <div className='button position'>Сверху</div>
+                            <div className='button position'>Снизу</div>
                         </div>
+                    </div>
+                    <div className='tools'>
+
                         <div className='text_prop'>
                             <div className='prop'>
                                 <div>Цвет</div>
@@ -39,7 +46,7 @@ class TextEdit extends Component {
                             </div>
                             <div className='prop'>
                                 <div>Размер</div>
-                                    <input id="myText" type="number"  className='button input'/>
+                                <input id="myText" type="number" className='button input'/>
                             </div>
                         </div>
                     </div>
