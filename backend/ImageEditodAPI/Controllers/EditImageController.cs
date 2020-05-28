@@ -134,8 +134,8 @@ namespace ImageEditodAPI.Controllers
         }
 
         [HttpGet]
-        [Route("download")]
-        public IActionResult Download()
+        [Route("getimage")]
+        public IActionResult GetImage()
         {
             var session = getSession();
             if (session == null)
@@ -242,8 +242,7 @@ namespace ImageEditodAPI.Controllers
             }
 
             var result = ImageEditor.ConvertToJpeg(body);
-            putImage(result);
-            return Content(Convert.ToBase64String(result));
+            return File(result, "image/jpeg", "image.jpg");
         }
 
         [HttpGet]
@@ -257,8 +256,7 @@ namespace ImageEditodAPI.Controllers
             }
 
             var result = ImageEditor.ConvertToPng(body);
-            putImage(result);
-            return Content(Convert.ToBase64String(result));
+            return File(result, "image/png", "image.png");
         }
     }
 }

@@ -9,11 +9,16 @@ import Rotate from "./components/Rotate";
 import TextEdit from "./components/TextEdit";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Redirect from "react-router-dom/es/Redirect";
+import loadImage from "./helpers/index.js";
 
 
 
 class App extends React.Component {
+    componentWillMount(){
+        loadImage();
+    }
     render() {
+        
         return (
             <div className="body">
                 <Sidebar/>

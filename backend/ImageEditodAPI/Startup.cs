@@ -28,6 +28,7 @@ namespace ImageEditodAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             // получаем строку подключения из файла конфигурации
             string connection = Configuration.GetConnectionString("DefaultConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
@@ -38,7 +39,7 @@ namespace ImageEditodAPI
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(300);
+                options.IdleTimeout = TimeSpan.FromSeconds(3000);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
@@ -69,7 +70,13 @@ namespace ImageEditodAPI
             });
 
             app.UseHttpsRedirection();
-
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:3000");
+                builder.AllowCredentials();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
             app.UseRouting();
 
             app.UseAuthorization();
