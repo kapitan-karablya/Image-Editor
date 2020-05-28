@@ -22,10 +22,10 @@ class Cut extends Component {
                     <div className='tools'>
                         <label>Пропорции</label>
                         <div className='buttons'>
-                            <div className='button cut_b'>16:9</div>
-                            <div className='button cut_b'>4:3</div>
-                            <div className='button cut_b'>3:2</div>
-                            <div className='button cut_b'>1:1</div>
+                            <div className='button cut_b'><div>16:9</div></div>
+                            <div className='button cut_b'><div>4:3</div></div>
+                            <div className='button cut_b'><div>3:2</div></div>
+                            <div className='button cut_b'><div>1:1</div></div>
 
                         </div>
                     </div>

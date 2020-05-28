@@ -11,4 +11,5 @@
 .text_b{
     width: 80%;
     flex-wrap: wrap;
+    align-self: center;
 }

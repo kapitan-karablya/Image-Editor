@@ -8,11 +8,11 @@ class Cut extends Component {
     render() {
         return (
             <div className='rotate edit-menu'>
-                <nav id='text-menu' className='menu-right'>
+                <nav id='effects-menu' className='menu-right'>
                     <div className='tools'>
                         <label className='title' style={{marginBottom:"1vh"}}>Окрасить</label>
                         <div className='button text_b'>
-                            <div>Степия</div>
+                            <div>Сепия</div>
                         </div>
                         <div className='button text_b'>
                             <div>Черно-белое</div>

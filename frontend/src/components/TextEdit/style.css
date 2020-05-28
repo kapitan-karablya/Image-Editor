@@ -42,6 +42,7 @@
     outline: none;
     align-items: center;
     text-align-last: center;
+    align-self: center;
 }
 
 option{

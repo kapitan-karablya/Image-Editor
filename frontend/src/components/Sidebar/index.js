@@ -7,7 +7,7 @@ const sidebarItemsOptions = [
     {text: 'rotate', href: '/rotate'},
     {text: 'cut', href: '/cut'},
     {text: 'text', href: '/text'},
-    {text: 'fff', href: '/effects'},
+    {text: 'effects', href: '/effects'},
 ];
 
 function HideMenu(activeItem, prevItem) {

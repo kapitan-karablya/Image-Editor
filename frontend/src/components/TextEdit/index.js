@@ -29,8 +29,8 @@ class TextEdit extends Component {
                     <div className='tools'>
                     <label>Положение</label>
                         <div className='buttons'>
-                            <div className='button position'>Сверху</div>
-                            <div className='button position'>Снизу</div>
+                            <div className='button position'><div>Сверху</div></div>
+                            <div className='button position'><div>Снизу</div></div>
                         </div>
                     </div>
                     <div className='tools'>
