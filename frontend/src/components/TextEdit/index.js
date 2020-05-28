@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import './style.css'
 import EditField from "../EditField";
 import Button from "../Button";
+import Selector from "../Selector";
 
 const buttons = [
     {name: 'bold'},
@@ -20,8 +21,13 @@ class TextEdit extends Component {
                         <div className='button text_b'>
                             <div>Добавить текст</div>
                         </div>
+                        <Selector/>
+                        <select className='button selector'>
+                            <option>Пункт 1</option>
+                            <option>Пункт 2</option>
+                        </select>
                         <div className='button text_b'>
-                            <div>Выберите шрифт</div>
+                            <div>Шрифт</div>
                         </div>
                         <div className='text_prop'>
                             <div className='prop'>

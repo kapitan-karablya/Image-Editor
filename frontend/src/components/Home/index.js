@@ -10,12 +10,6 @@ class Home extends Component {
         this.state = {file: "", imagePreviewUrl: ""};
     }
 
-    _handleSubmit(e) {
-        e.preventDefault();
-        // TODO: do something with -> this.state.file
-        console.log("handle uploading-", this.state.file);
-    }
-
     _handleImageChange(e) {
         e.preventDefault();
 
@@ -32,7 +26,7 @@ class Home extends Component {
         reader.readAsDataURL(file);
 
         let parsedImageUrl = this.state.imagePreviewUrl;
-        window.location.assign('http://localhost:3000/rotate')
+        //window.location.assign('http://localhost:3000/rotate')
 
 
         let response = fetch("https://localhost:5001/api/upload", {

@@ -1,7 +1,7 @@
 
 .text_b{
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 6vh;
     margin: 7% 0;
 }
@@ -28,4 +28,28 @@
     height: 6vh;
     margin: 2%;
     padding: 2%;
+}
+
+.selector{
+    display: flex;
+    width: 90%;
+    height: 6vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    color: #D1D7E4;
+    border: none;
+    outline: none;
+    align-items: center;
+    text-align-last: center;
+    
+}
+
+.select option{
+    background-color: transparent;
+    border: 5px;
+    padding-right: 15px;
+    height: 31px;
+    width: 220px;
+    border-radius: 10px;
 }

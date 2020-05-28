@@ -1,0 +1,14 @@
+.title {
+    margin-bottom: 1vh;
+    margin-top: 4vh;
+}
+
+.tools{
+    margin: 1vh;
+    justify-content: center;
+}
+
+.text_b{
+    width: 80%;
+    flex-wrap: wrap;
+}
