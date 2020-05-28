@@ -10,6 +10,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Redirect from "react-router-dom/es/Redirect";
 
 
+
 class App extends React.Component {
     render() {
         return (

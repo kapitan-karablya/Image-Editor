@@ -7,6 +7,8 @@
     text-align:  center;
     color: #D1D7E4;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 }
 
 .download img {
@@ -15,6 +17,7 @@
     display:block;
     margin:auto;
     box-sizing: border-box;
+    cursor:pointer;
 
 }
 
@@ -30,6 +33,27 @@
     padding-top: 5vh;
     font-size: 3vw;
     box-sizing: border-box;
+}
+
+.dow_image {
+    width: 50%;
+}
+.dow_image input[type=file]{
+    outline:0;
+    opacity:0;
+    pointer-events:none;
+    user-select:none;
+    height: 0;
+}
+.dow_image .form-group{
+    width: 70%;
+    border:2px dashed grey;
+    border-radius:5px;
+    cursor:pointer;
+    text-align:center
+}
 
 
+#file {
+outline:0;opacity:0;pointer-events:none;user-select:none
 }

@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import './style.css'
+import Home from "../Home";
+import {NavLink} from "react-router-dom";
 
 class Examples extends Component {
+
     render() {
         let images = [
             "flowers",
@@ -14,8 +17,10 @@ class Examples extends Component {
                     <img className="arrows" src={"icons/left-arrow.svg"} alt="folder"/>
                     {images.map((value, index) => {
                         return (
-                            <div className="image" key={index}>
+                            <div className="image" onClick={() => Home.clickHandler(value)}  key={index}>
+                                <NavLink to={'/rotate'}>
                                 <img src={'images/' + value + '.webp'} alt={value}/>
+                                </NavLink>
                             </div>
                         )
                     })}

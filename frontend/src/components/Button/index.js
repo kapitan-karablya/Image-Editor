@@ -20,7 +20,7 @@ class Button extends Component {
         else this.state.border = '3px solid #19202A';
         if (this.props.name != null) {
             return (
-                <div className='button param' onClick={() => this.clickHandler()} style={{border: this.state.border}}>
+                <div className='button param' style={{border: this.state.border}}>
                     <img src={'icons/' + this.props.name + '.svg'} alt={this.props.name}/>
                 </div>)
         }
