@@ -12,6 +12,7 @@ class Home extends Component {
     e.preventDefault();
     // TODO: do something with -> this.state.file
     console.log("handle uploading-", this.state.file);
+    this.upload();
   }
 
   _handleImageChange(e) {
@@ -19,6 +20,8 @@ class Home extends Component {
 
     let reader = new FileReader();
     let file = e.target.files[0];
+
+    let imagePreviewUrl = "";
 
     reader.onloadend = () => {
       this.setState({
@@ -29,18 +32,23 @@ class Home extends Component {
 
     reader.readAsDataURL(file);
 
-    let parsedImageUrl = this.state.imagePreviewUrl;
+    
+    
+  }
 
+  upload() {
+    let parsedImageUrl = this.state.imagePreviewUrl.split(',')[1];
+    console.log(parsedImageUrl);
     let response = fetch("https://localhost:5001/api/upload", {
       method: "PUT",
       body: parsedImageUrl,
-    }).then(response => console.log(response))
-
+      credentials: "include",
+      mode: 'cors'
+    });
   }
 
   render() {
     let { imagePreviewUrl } = this.state;
-    console.log(imagePreviewUrl);
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = <img src={imagePreviewUrl} alt="uploadedPhoto" />;
@@ -73,13 +81,12 @@ class Home extends Component {
           </div>
           <label className="choose-label">или выберите из существующих</label>
         </div>
-        {$imagePreview}
         <Examples />
       </div>
     );
   }
 
-  upload() {}
+  
 }
 
 export default Home;

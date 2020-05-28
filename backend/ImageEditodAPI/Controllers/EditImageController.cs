@@ -76,6 +76,7 @@ namespace ImageEditodAPI.Controllers
             session.History = JsonConvert.SerializeObject(history.ToArray());
             db.Sessions.Update(session);
             db.SaveChangesAsync();
+
         }
 
         [HttpGet]
@@ -130,18 +131,20 @@ namespace ImageEditodAPI.Controllers
             }
             db.Sessions.Add(session);
             db.SaveChangesAsync();
+            Console.WriteLine("ok");
             return Content("Ok");
         }
 
         [HttpGet]
-        [Route("download")]
-        public IActionResult Download()
+        [Route("getimage")]
+        public IActionResult GetImage()
         {
             var session = getSession();
             if (session == null)
             {
                 return StatusCode(404);
             }
+            Console.WriteLine("ok");
             return Content(session.CurrentImage);
         }
 
@@ -231,7 +234,7 @@ namespace ImageEditodAPI.Controllers
             return Content(Convert.ToBase64String(result));
         }
 
-        [HttpPut]
+        [HttpGet]
         [Route("getjpeg")]
         public IActionResult ConvertToJpeg()
         {
@@ -242,11 +245,10 @@ namespace ImageEditodAPI.Controllers
             }
 
             var result = ImageEditor.ConvertToJpeg(body);
-            putImage(result);
-            return Content(Convert.ToBase64String(result));
+            return File(result, "image/jpeg", "image.jpeg");
         }
 
-        [HttpPut]
+        [HttpGet]
         [Route("getpng")]
         public IActionResult ConvertToPng()
         {
@@ -256,9 +258,8 @@ namespace ImageEditodAPI.Controllers
                 return StatusCode(404);
             }
 
-            var result = ImageEditor.ConvertToPng(body);
-            putImage(result);
-            return Content(Convert.ToBase64String(result));
+            var result = ImageEditor.ConvertToJpeg(body);
+            return File(result, "image/png", "image.jpeg");
         }
     }
 }

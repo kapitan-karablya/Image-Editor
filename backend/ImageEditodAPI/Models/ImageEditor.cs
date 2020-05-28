@@ -280,7 +280,7 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        private static Bitmap BytesToBitmap(byte[] bytes)
+        public static Bitmap BytesToBitmap(byte[] bytes)
         {
             Image img = Image.FromStream(new MemoryStream(bytes));
             return (Bitmap)img;
