@@ -95,7 +95,7 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        public static byte[] WriteText(byte[] image, string text, bool isBottom, string hexColor, string font = "Times New Roman", int fontSize = 20)
+        public static byte[] WriteText(byte[] image, string text, bool isBottom, string color, string font = "Times New Roman", int fontSize = 20)
         {
 
             Bitmap bitmap = BytesToBitmap(image);
@@ -109,13 +109,20 @@ namespace ImageEditodAPI.Models
             format.LineAlignment = StringAlignment.Center;
             format.Alignment = StringAlignment.Center;
 
+            var brush = Brushes.White;
+            if (color == "red")
+                brush = Brushes.Red;
+            else if (color == "yellow")
+                brush = Brushes.Yellow;
+            else if (color == "green")
+                brush = Brushes.Green;
 
 
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
                 using (Font arialFont = new Font("Arial", 100))
                 {
-                    graphics.DrawString(text, arialFont, Brushes.White, rect1, format);
+                    graphics.DrawString(text, arialFont, brush, rect1, format);
                 }
             }
 

@@ -188,7 +188,7 @@ namespace ImageEditodAPI.Controllers
 
         [HttpGet]
         [Route("WriteText")]
-        public IActionResult WriteText(string text, bool isBottom, string color, string font, int fontSize)
+        public IActionResult WriteText(string text, bool isBottom, string font, int fontSize, string color = "white")
         {
             var body = getImage();
             if (body == null)

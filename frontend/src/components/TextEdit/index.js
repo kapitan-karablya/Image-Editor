@@ -13,11 +13,19 @@ const buttons = [
 
 class TextEdit extends Component {
   async writeTextBottom() {
-    if (document.getElementById("text").value != null) {
+    let select = document.getElementById("color");
+    let text = select.options[select.selectedIndex].text;
+    console.log(text);
+    let color;
+    if (text === "Белый") color = "white";
+    else if (text === "Красный") color = "red";
+    else if (text === "Желтый") color = "yellow";
+    else if (text === "Зеленый") color = "green";
+    if (document.getElementById("text").value != null && color != null) {
       let response = await fetch(
         "https://localhost:5001/api/writetext?text=" +
           document.getElementById("text").value +
-          "&isBottom=true&fontSize=100",
+          "&isBottom=true&fontSize=100&color=" + color,
         {
           method: "GET",
           credentials: "include",
@@ -28,11 +36,19 @@ class TextEdit extends Component {
   }
 
   async writeTextTop() {
-    if (document.getElementById("text").value != null) {
+    let select = document.getElementById("color");
+    let text = select.options[select.selectedIndex].text;
+    console.log(text);
+    let color;
+    if (text === "Белый") color = "white";
+    else if (text === "Красный") color = "red";
+    else if (text === "Желтый") color = "yellow";
+    else if (text === "Зеленый") color = "green";
+    if (document.getElementById("text").value != null && color != null) {
       let response = await fetch(
         "https://localhost:5001/api/WriteText?text=" +
           document.getElementById("text").value +
-          "&isBottom=false&fontSize=100",
+          "&isBottom=false&fontSize=100&color=" + color,
         {
           method: "GET",
           credentials: "include",
@@ -58,7 +74,7 @@ class TextEdit extends Component {
                 placeholder="Введите текст"
               ></input>
             </div>
-            <select className="button selector">
+            <select id="fonr" className="button selector">
               <option>Arial</option>
               <option>Times New Roman</option>
               <option>California</option>
@@ -79,7 +95,7 @@ class TextEdit extends Component {
             <div className="text_prop">
               <div className="prop">
                 <div>Цвет</div>
-                <select className="button selector color">
+                <select id="color" className="button selector color">
                   <option>Белый</option>
                   <option>Красный</option>
                   <option>Желтый</option>
