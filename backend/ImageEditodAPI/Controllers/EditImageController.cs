@@ -148,7 +148,7 @@ namespace ImageEditodAPI.Controllers
 
         [HttpGet]
         [Route("Crop")]
-        public IActionResult Crop(int startX, int startY, int stopX, int stopY, string relation)
+        public IActionResult Crop(string relation, int startX = 0, int startY = 0, int stopX = 0, int stopY = 0)
         {
             var body = getImage();
             if (body == null)
@@ -156,7 +156,7 @@ namespace ImageEditodAPI.Controllers
                 return StatusCode(404);
             }
 
-            byte[] result = ImageEditor.Crop(body, startX, startY, stopX, stopY, relation);
+            byte[] result = ImageEditor.Crop(body, relation, startX, startY, stopX, stopY);
 
             putImage(result);
 
@@ -188,7 +188,7 @@ namespace ImageEditodAPI.Controllers
 
         [HttpGet]
         [Route("WriteText")]
-        public IActionResult WriteText(string text, bool isBottom, string font, int fontSize)
+        public IActionResult WriteText(string text, bool isBottom, string color, string font, int fontSize)
         {
             var body = getImage();
             if (body == null)
@@ -196,7 +196,7 @@ namespace ImageEditodAPI.Controllers
                 return StatusCode(404);
             }
 
-            var result = ImageEditor.WriteText(body, text, isBottom, "#FFFFFF", font, fontSize);
+            var result = ImageEditor.WriteText(body, text, isBottom, color, font, fontSize);
             putImage(result);
             return Content(Convert.ToBase64String(result));
         }

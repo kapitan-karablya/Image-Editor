@@ -14,7 +14,7 @@ class Examples extends Component {
         return (
             <div className="img-area">
                 <div className="img-examples">
-                    <img className="arrows" src={"icons/left-arrow.svg"} alt="folder"/>
+                    <img className="arrows" src={"icons/left-arrow.svg"} alt="arrow"/>
                     {images.map((value, index) => {
                         return (
                             <div className="image" onClick={() => Home.clickHandler(value)}  key={index}>
@@ -24,7 +24,7 @@ class Examples extends Component {
                             </div>
                         )
                     })}
-                    <img className="arrows" src={"icons/right-arrow.svg"} alt="folder"/>
+                    <img className="arrows" src={"icons/right-arrow.svg"} alt="arrow"/>
                 </div>
             </div>
         )

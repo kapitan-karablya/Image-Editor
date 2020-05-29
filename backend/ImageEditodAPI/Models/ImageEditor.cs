@@ -20,7 +20,7 @@ namespace ImageEditodAPI.Models
         //3. ChangeForm method
         //4. WriteText method
 
-        public static byte[] Crop(byte[] image,  string relation, int startX, int startY, int stopX, int stopY)
+        public static byte[] Crop(byte[] image, string relation, int startX, int startY, int stopX, int stopY)
         {
             Bitmap bitmap = BytesToBitmap(image);
 
@@ -32,21 +32,33 @@ namespace ImageEditodAPI.Models
 
             if (relation == "16:9")
             {
-
+                if ((double)bitmap.Width/(double)bitmap.Height < 16.0/9.0)
+                    cropArea = new Rectangle(0, 0, bitmap.Width, 9 * bitmap.Width / 16);
+                else
+                    cropArea = new Rectangle(0, 0, 16 * bitmap.Height / 9, bitmap.Height);
             }
             else if (relation == "4:3")
             {
-
+                if ((double)bitmap.Width / (double)bitmap.Height < 4.0 / 3.0)
+                    cropArea = new Rectangle(0, 0, bitmap.Width, 3 * bitmap.Width / 4);
+                else
+                    cropArea = new Rectangle(0, 0, 4 * bitmap.Height / 3, bitmap.Height);
             }
             else if (relation == "3:2")
             {
-
+                if ((double)bitmap.Width / (double)bitmap.Height < 3.0 / 2.0)
+                    cropArea = new Rectangle(0, 0, bitmap.Width, 2 * bitmap.Width / 3);
+                else
+                    cropArea = new Rectangle(0, 0, 3 * bitmap.Height / 2, bitmap.Height);
             }
             else if (relation == "1:1")
             {
-
+                if (bitmap.Width < bitmap.Height)
+                    cropArea = new Rectangle(0, 0, bitmap.Width, bitmap.Width);
+                else
+                    cropArea = new Rectangle(0, 0, bitmap.Height, bitmap.Height);
             }
-                
+
 
             byte[] result = BitmapToPngBytes(bitmap.Clone(cropArea, bitmap.PixelFormat));
             return result;
@@ -85,7 +97,7 @@ namespace ImageEditodAPI.Models
 
         public static byte[] WriteText(byte[] image, string text, bool isBottom, string hexColor, string font = "Times New Roman", int fontSize = 20)
         {
-            
+
             Bitmap bitmap = BytesToBitmap(image);
             Rectangle rect1 = new Rectangle(0, 0, bitmap.Width, 400);
             if (isBottom)
@@ -97,7 +109,7 @@ namespace ImageEditodAPI.Models
             format.LineAlignment = StringAlignment.Center;
             format.Alignment = StringAlignment.Center;
 
-            
+
 
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {

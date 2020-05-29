@@ -3,7 +3,7 @@ import "./style.css";
 import Examples from "../Examples";
 import loadImage from "../../helpers/index.js"
 
-export let ima = loadImage();
+export let ima = "images/error.jpg";
 
 export function updateImage(imageUrl){
     ima = imageUrl;
