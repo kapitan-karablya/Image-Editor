@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import './style.css'
 import EditField from "../EditField";
 import Button from "../Button";
+import loadImage from "../../helpers/index.js";
 
 const buttons = [
     {name: 'bold'},
@@ -11,6 +12,21 @@ const buttons = [
 ];
 
 class TextEdit extends Component {
+    async writeTextBottom() {
+        let response = await fetch("https://localhost:5001/api/writetext?text=превет&isBottom=true&fontSize=100", {
+          method: "GET",
+          credentials: "include",
+        });
+        loadImage();
+      }
+
+      async writeTextTop() {
+        let response = await fetch("https://localhost:5001/api/WriteText?text=превет&isBottom=false&fontSize=100", {
+          method: "GET",
+          credentials: "include",
+        });
+        loadImage();
+      }
 
     render() {
         return (
@@ -29,8 +45,8 @@ class TextEdit extends Component {
                     <div className='tools'>
                     <label>Положение</label>
                         <div className='buttons'>
-                            <div className='button position'><div>Сверху</div></div>
-                            <div className='button position'><div>Снизу</div></div>
+                            <div onClick={this.writeTextTop} className='button position'><div>Сверху</div></div>
+                            <div onClick={this.writeTextBottom} className='button position'><div>Снизу</div></div>
                         </div>
                     </div>
                     <div className='tools'>

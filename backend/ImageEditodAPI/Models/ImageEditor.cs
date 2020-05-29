@@ -20,7 +20,7 @@ namespace ImageEditodAPI.Models
         //3. ChangeForm method
         //4. WriteText method
 
-        public static byte[] Crop(byte[] image, int startX, int startY, int stopX, int stopY)
+        public static byte[] Crop(byte[] image,  string relation, int startX, int startY, int stopX, int stopY)
         {
             Bitmap bitmap = BytesToBitmap(image);
 
@@ -29,6 +29,24 @@ namespace ImageEditodAPI.Models
                     new Point(startX, startY),
                     new Size(stopX - startX, stopY - startY)
                 );
+
+            if (relation == "16:9")
+            {
+
+            }
+            else if (relation == "4:3")
+            {
+
+            }
+            else if (relation == "3:2")
+            {
+
+            }
+            else if (relation == "1:1")
+            {
+
+            }
+                
 
             byte[] result = BitmapToPngBytes(bitmap.Clone(cropArea, bitmap.PixelFormat));
             return result;
@@ -65,31 +83,29 @@ namespace ImageEditodAPI.Models
             return result;
         }
 
-        public static byte[] WriteText(byte[] image, string text, int startX, int startY, int stopX, int stopY, string hexColor, string font, string fontSize)
+        public static byte[] WriteText(byte[] image, string text, bool isBottom, string hexColor, string font = "Times New Roman", int fontSize = 20)
         {
+            
             Bitmap bitmap = BytesToBitmap(image);
+            Rectangle rect1 = new Rectangle(0, 0, bitmap.Width, 400);
+            if (isBottom)
+            {
+                rect1 = new Rectangle(0, bitmap.Height - 400, bitmap.Width, 200);
+            }
 
-            Rectangle textArea = new Rectangle
-                (
-                    new Point(startX, startY),
-                    new Size(stopX - startX, stopY - startY)
-                );
+            StringFormat format = new StringFormat();
+            format.LineAlignment = StringAlignment.Center;
+            format.Alignment = StringAlignment.Center;
 
-            Graphics graphics = Graphics.FromImage(bitmap);
+            
 
-            int a = 1;
-            int r = int.Parse(hexColor.Substring(1, 2), NumberStyles.HexNumber);
-            int g = int.Parse(hexColor.Substring(3, 2), NumberStyles.HexNumber);
-            int b = int.Parse(hexColor.Substring(5, 2), NumberStyles.HexNumber);
-
-            var brush = new SolidBrush(Color.FromArgb(a, r, g, b));
-
-            graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            graphics.DrawString(text, new Font(font, float.Parse(fontSize, CultureInfo.InvariantCulture.NumberFormat)), brush, textArea);
-
-            graphics.Flush();
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+            {
+                using (Font arialFont = new Font("Arial", 100))
+                {
+                    graphics.DrawString(text, arialFont, Brushes.White, rect1, format);
+                }
+            }
 
             byte[] result = BitmapToPngBytes(bitmap);
 

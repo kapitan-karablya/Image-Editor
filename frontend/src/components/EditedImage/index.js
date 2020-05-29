@@ -1,12 +1,17 @@
 import React, {Component} from "react";
 import './style.css';
-import {ima} from "../Home";
+import {ima, updateImage} from "../Home";
 import loadImage from "../../helpers/index.js"
 
 class EditedImage extends Component {
 
+    updateComponent(){
+        setTimeout(() => this.forceUpdate(), 300);
+    }
+
     componentWillMount(){
         loadImage();
+        this.updateComponent();
     }
 
     render() {

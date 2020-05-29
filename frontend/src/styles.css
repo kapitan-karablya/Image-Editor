@@ -68,6 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    cursor: pointer;
 }
 
 .button button{
