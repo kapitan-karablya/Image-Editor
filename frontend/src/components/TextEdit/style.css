@@ -66,6 +66,7 @@ option{
     outline: none;
     align-items: center;
     text-align-last: center;
+
 }
 
 .input::-webkit-inner-spin-button {
@@ -80,4 +81,12 @@ option{
 .position{
     width: 41%;
     margin: 3%;
+}
+
+.input-text{
+    width: 90%;
+    align-self: center;
+}
+.input-text input{
+    margin: 0;
 }

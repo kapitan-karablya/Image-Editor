@@ -1,18 +1,22 @@
 import React, {Component} from "react";
 import './style.css';
+import {NavLink} from "react-router-dom";
 
 
 class BottomPanel extends Component {
     render() {
         return (
             <div className='bottomPanel'>
+                <div className="undo-redo" >
+                    <div><img src={"icons/undo.svg"} alt="folder"/></div>
+                </div>
+                <NavLink className="home-nav" to={'/home'}>
                 <div className='openImage bottomElem'>
                     <div><img src={"icons/folder.svg"} alt="folder"/></div>
                     <label>Открыть новое изображение</label>
-                </div>
-                <div className='downloadImage bottomElem' onClick={this.donwloadClickHandler}>
-                    <div><img src={"icons/download.svg"} alt="download"/></div>
-                    <label>Загрузить изображение</label>
+                </div></NavLink>
+                <div className="undo-redo" >
+                    <div><img src={"icons/redo.svg"} alt="folder"/></div>
                 </div>
             </div>
         )

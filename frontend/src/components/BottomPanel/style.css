@@ -7,8 +7,10 @@
     font-size: 1.5vw;
     text-align:  center;
     justify-content: space-around;
-    margin: 1% 0;
+    margin-bottom: 3%;
     box-sizing: border-box;
+    width: 90%;
+    align-self: center;
 
 }
 .bottomElem {
@@ -35,3 +37,30 @@
     margin-bottom: 0;
     box-sizing: border-box;
 }
+
+.undo-redo{
+    display: flex;
+    height: 100%;
+    width: 8%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    align-content: center;
+    align-self: center;
+}
+
+.undo-redo div{
+    height: 100%;
+    width: 100%;
+}
+
+.bottomElem label{
+    font-family: "Roboto", sans-serif;
+    color: #D1D7E4;
+    font-size: 1.5vw;
+}
+
+.home-nav{
+    text-decoration: none;
+}
+

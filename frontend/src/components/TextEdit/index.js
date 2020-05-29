@@ -20,6 +20,9 @@ class TextEdit extends Component {
                         <div className='button text_b'>
                             <div>Добавить текст</div>
                         </div>
+                        <div className="input-text">
+                        <input id="myText" type="text" className='button input' placeholder="Введите текст"/>
+                        </div>
                         <select className='button selector'>
                             <option>Arial</option>
                             <option>Times New Roman</option>
